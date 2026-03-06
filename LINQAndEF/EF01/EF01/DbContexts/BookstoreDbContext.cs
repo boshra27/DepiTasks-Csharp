@@ -12,18 +12,19 @@ namespace EF01.DbContexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-             modelBuilder.Entity<Book>()
-                .Property(B => B.Title)
+             modelBuilder.Entity<Book>(B =>
+             {
+                B.Property(B => B.Title)
                 .IsRequired()
                 .HasMaxLength(150);
 
-            modelBuilder.Entity<Book>()
-                .Property(B => B.Price)
+                B.Property(B => B.Price)
                 .HasColumnType("decimal(8,2)");
 
-            modelBuilder.Entity<Book>()
-                .Property(B => B.PublishedDate)
+                B.Property(B => B.PublishedDate)
                 .IsRequired(false);
+
+             });
         }
 
         public DbSet<Book> Books { get; set; }

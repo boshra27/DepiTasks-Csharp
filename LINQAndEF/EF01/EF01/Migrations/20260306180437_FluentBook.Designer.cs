@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF01.Migrations
 {
     [DbContext(typeof(BookstoreDbContext))]
-    [Migration("20260306161452_FluentBook")]
+    [Migration("20260306180437_FluentBook")]
     partial class FluentBook
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
